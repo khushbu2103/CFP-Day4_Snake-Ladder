@@ -12,27 +12,32 @@ public class SnakeAndLadderGame {
         System.out.println("Welcome to snake and ladder game");
         int pl1_Position = 0;
 
-        //Uc-2
-        Random random = new Random();
-        int pl1_DiceRollNumber = random.nextInt(6);
-        System.out.println("Player rolls the dice and get " + pl1_DiceRollNumber + " number");
-
-        //Uc-3
-        int pl1_Option = random.nextInt(3);
-        switch (pl1_Option)
+        while (pl1_Position < 100)
         {
-            case 0:
-                System.out.println("No play");
-                break;
-            case 1:
-                pl1_Position = pl1_Position + pl1_DiceRollNumber;
-                System.out.println("Ladder");
-                break;
-            case 2:
-                pl1_Position = pl1_Position - pl1_DiceRollNumber;
-                System.out.println("Snake");
-                break;
+            Random random = new Random();
+            int pl1_DiceRollNumber = random.nextInt(6);
+            System.out.println("Player rolls the dice and get " + pl1_DiceRollNumber + " number");
+            int pl1_Option = random.nextInt(3);// 0,1,2
+            switch (pl1_Option)
+            {
+                case 0:
+                    System.out.println("No play");
+                    break;
+                case 1:
+                    pl1_Position = pl1_Position + pl1_DiceRollNumber;
+                    System.out.println("Ladder");
+                    break;
+                case 2:
+                    pl1_Position = pl1_Position - pl1_DiceRollNumber;
+                    System.out.println("Snake");
+                    break;
+            }
+            if(pl1_Position < 0)
+            {
+                pl1_Position = 0;
+            }
+            System.out.println("position of player one is: " + pl1_Position);
         }
-        System.out.println("position of player one is: " + pl1_Position);
+
     }
 }
