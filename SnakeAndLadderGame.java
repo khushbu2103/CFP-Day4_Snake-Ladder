@@ -11,11 +11,12 @@ public class SnakeAndLadderGame {
         int x = sc.nextInt();
         System.out.println("Welcome to snake and ladder game");
         int pl1_Position = 0;
-
+        int pl1_numberOfDiceRoll = 0;
         while (pl1_Position < 100)
         {
             Random random = new Random();
             int pl1_DiceRollNumber = random.nextInt(6);
+            pl1_numberOfDiceRoll++;
             System.out.println("Player rolls the dice and get " + pl1_DiceRollNumber + " number");
             int pl1_Option = random.nextInt(3);// 0,1,2
             switch (pl1_Option)
@@ -45,7 +46,8 @@ public class SnakeAndLadderGame {
             {
                 System.out.println("player one has won");
             }
-        }
 
+        }
+        System.out.println(pl1_numberOfDiceRoll + " time dice rolled to won the game");
     }
 }
