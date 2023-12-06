@@ -35,8 +35,16 @@ public class SnakeAndLadderGame {
             if(pl1_Position < 0)
             {
                 pl1_Position = 0;
+            } else if (pl1_Position >100)
+            {
+                pl1_Position = 100;
             }
             System.out.println("position of player one is: " + pl1_Position);
+
+            if(pl1_Position == 100)
+            {
+                System.out.println("player one has won");
+            }
         }
 
     }
